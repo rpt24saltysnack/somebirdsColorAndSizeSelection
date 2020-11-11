@@ -4,7 +4,7 @@
   "description": "Shoe color and selection service",
   "main": "index.js",
   "scripts": {
-    "test": "test",
+    "test": "./node_modules/.bin/mocha --require @babel/register ./test",
     "react-dev": "webpack -w",
     "server-dev": "nodemon ./server/index.js"
   },
@@ -30,5 +30,12 @@
     "react-dom": "^17.0.1",
     "webpack": "^5.4.0",
     "webpack-cli": "^4.2.0"
+  },
+  "devDependencies": {
+    "@babel/plugin-proposal-function-bind": "^7.12.1",
+    "@babel/register": "^7.12.1",
+    "chai": "^4.2.0",
+    "mocha": "^8.2.1",
+    "mocha-jsdom": "^2.0.0"
   }
 }
