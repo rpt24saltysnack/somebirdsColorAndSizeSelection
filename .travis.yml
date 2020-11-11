@@ -1,6 +1,8 @@
-sudo: false
-
 language: node_js
+
+os: mac
+
+dist:
 
 node_js:
   - node
