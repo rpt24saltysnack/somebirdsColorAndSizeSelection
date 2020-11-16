@@ -6,7 +6,7 @@ node_js:
 install:
   - npm ci
 
-services:
+addons:
   - mysql
 
 script:
