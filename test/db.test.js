@@ -2,10 +2,10 @@ import { expect } from 'chai';
 const { Shoe, Color, Size, Quantity, Shoecolor, Shoesize } = require('../db/schema.js');
 
 describe('Database', () => {
-  it('has a shoes table with 100 records', () => {
+  it('has a shoes table with 99 records', () => {
     Shoe.findAll({})
     .then(shoes => {
-      expect(shoes.length).to.equal(100);
+      expect(shoes.length).to.equal(99);
     })
     .catch(err => {
       console.error(err);
