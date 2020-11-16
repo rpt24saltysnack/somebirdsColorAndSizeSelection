@@ -264,13 +264,6 @@ for (let shoeID = 1; shoeID <= NUMBER_OF_SHOES; shoeID++) {
   }
 }
 
-// console.log('shoeBulkData: ', shoeBulkData.length);
-// console.log('colorBulkData: ', colorBulkData.length);
-// console.log('sizeBulkData: ', sizeBulkData.length);
-// console.log('shoeColorBulkData: ', shoeColorBulkData.length);
-// console.log('shoeSizeBulkData: ', shoeSizeBulkData.length);
-// console.log('quantityBulkData: ', quantityBulkData.length);
-
 Shoe.bulkCreate(shoeBulkData)
 .then (() => {
   Color.bulkCreate(colorBulkData);
