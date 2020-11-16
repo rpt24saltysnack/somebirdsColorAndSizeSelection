@@ -1,6 +1,6 @@
 language: node_js
 
-os: linux
+os: mac
 
 node_js:
   - node
@@ -12,8 +12,6 @@ services:
   - mysql
 
 script:
-  - npm run test:db-permission-setup
-  - npm run db:seed
   - npm test
 
 notifications:
