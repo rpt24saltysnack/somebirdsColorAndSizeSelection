@@ -5,20 +5,12 @@ os: mac
 node_js:
   - node
 
-addons:
-  apt:
-   sources:
-    - mysql-5.7-trusty
-   packages:
-    - mysql-server
-    - mysql-client
-
 install:
   - npm ci
 
 script:
+  - npm run test:db-install
   - npm run test:db-permission-setup
-  - npm run db:seed
   - npm test
 
 notifications:
