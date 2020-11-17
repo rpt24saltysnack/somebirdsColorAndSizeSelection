@@ -9,6 +9,9 @@ install:
   - npm ci
 
 script:
+  - npm run test:db-install
+  - npm run test:db-permission-setup
+  - npm run db:seed
   - npm test
 
 notifications:
