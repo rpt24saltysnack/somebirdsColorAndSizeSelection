@@ -19,10 +19,10 @@ describe('API Endpoints', () => {
     })
   });
 
-  it('GET request to /shoes/:shoeId/colors/:colorId/sizes/:sizeId/quantity should return data that matches example data', () => {
+  it('GET request to /shoes/:shoeId/colors/:colorId/sizes/:sizeId/quantity should return an object with a \'quantity\' property of type \'number\'', () => {
     return shoes.get.quantity(shoeID, colorID, sizeID)
     .then(quantityData => {
-      expect(JSON.stringify(quantityData)).to.equal(JSON.stringify(exampleData.quantity));
+      expect(typeof quantityData.quantity).to.equal('number');
     })
   });
 
