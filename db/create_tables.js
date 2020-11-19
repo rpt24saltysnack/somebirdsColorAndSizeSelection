@@ -8,6 +8,7 @@ async function synchronizeModels() {
     await Quantity.sync();
     await Shoecolor.sync();
     await Shoesize.sync();
+    console.log('Successfully created: shoes, colors, sizes, quantities, shoecolors, and shoesizes tables');
   } catch (error) {
     console.error(error);
   }
