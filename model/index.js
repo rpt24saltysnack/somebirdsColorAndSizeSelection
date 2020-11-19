@@ -68,7 +68,7 @@ let quantity = (shoeID, colorID, sizeID) => {
       }
     })
     .then(results => {
-      resolve(results.map(x => x.dataValues.quantity));
+      resolve(results.map(x => ({ quantity: x.dataValues.quantity }))[0]);
     })
     .catch(err => {
       reject(err);
