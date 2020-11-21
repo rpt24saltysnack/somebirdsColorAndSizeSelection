@@ -1,20 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 
-class App extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
+function App(props) {
 
-    };
-  }
-
-  render() {
-    return (
+  return (
       <div className="app-container">
         <h2>App Placeholder</h2>
       </div>
     );
-  }
 }
 
 export default App;
