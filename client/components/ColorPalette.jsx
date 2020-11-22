@@ -14,13 +14,15 @@ function ColorPalette(props) {
   }, [props.colors]);
 
   const handleClick = (colorWell) => {
-    let [name, shoeColor, soleColor] = [colorWell.name, colorWell.shoe_color, colorWell.sole_color];
+    let [id, name, shoeColor, soleColor] = [colorWell.id, colorWell.name, colorWell.shoe_color, colorWell.sole_color];
     if(isLimited) {
       props.setLimited(`${name} (${shoeColor}/${soleColor})`);
       props.setClassic('');
+      props.setColor(id);
     } else {
       props.setClassic(`${name} (${shoeColor}/${soleColor})`);
       props.setLimited('');
+      props.setColor(id);
     }
   }
 

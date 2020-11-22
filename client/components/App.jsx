@@ -15,11 +15,7 @@ function App(props) {
   const [colorID, setColorID] = useState('');
 
   useEffect(() => {
-    Axios.get('/shoes/:shoeId/colors',{
-      params: {
-        shoeId: shoeID
-      }
-    })
+    Axios.get(`/shoes/${shoeID}/colors`,)
     .then(colors => {
       setClassicColors(colors.data.filter(color => color.limited === false));
       setLimitedColors(colors.data.filter(color => color.limited === true));
@@ -30,11 +26,7 @@ function App(props) {
   }, [shoeID]);
 
   useEffect(() => {
-    Axios.get('/shoes/:shoeId/sizes',{
-      params: {
-        shoeId: shoeID
-      }
-    })
+    Axios.get(`/shoes/${shoeID}/sizes`,)
     .then(sizes => {
       setSizes(sizes.data);
     })
@@ -45,8 +37,8 @@ function App(props) {
 
   return (
       <div className="app-container">
-        <ColorPalette colors={ classicColors } selection={ classicSelection } setClassic={ setClassicSelection } setLimited={ setLimitedSelection }/>
-        <ColorPalette colors={ limitedColors } selection={ limitedSelection } setClassic={ setClassicSelection } setLimited={ setLimitedSelection }/>
+        <ColorPalette colors={ classicColors } selection={ classicSelection } setClassic={ setClassicSelection } setLimited={ setLimitedSelection } setColor={ setColorID }/>
+        <ColorPalette colors={ limitedColors } selection={ limitedSelection } setClassic={ setClassicSelection } setLimited={ setLimitedSelection } setColor={ setColorID }/>
         <SizeSelection shoeID={ shoeID } colorID={ colorID } sizes={ sizes } />
       </div>
     );
