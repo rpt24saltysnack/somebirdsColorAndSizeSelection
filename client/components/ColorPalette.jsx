@@ -19,10 +19,12 @@ function ColorPalette(props) {
       props.setLimited(`${name} (${shoeColor}/${soleColor})`);
       props.setClassic('');
       props.setColor(id);
+      props.setSize('');
     } else {
       props.setClassic(`${name} (${shoeColor}/${soleColor})`);
       props.setLimited('');
       props.setColor(id);
+      props.setSize('');
     }
   }
 
@@ -33,7 +35,7 @@ function ColorPalette(props) {
         {isLimited && <p className="heading">LIMITED EDITION: {props.selection}</p>}
         <div className="colorpalette">
           {props.colors.map(color => {
-            return <ColorWell color={ color } handleClick={ handleClick }/>
+            return <ColorWell color={ color } selected={props.selectedID === color.id} handleClick={ handleClick }/>
           })}
         </div>
     </div>

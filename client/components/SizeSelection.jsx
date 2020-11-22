@@ -18,6 +18,10 @@ useEffect(() => {
   }
 }, [props.colorID]);
 
+  const handleClick = (sizeData) => {
+    const id = sizeData.id;
+    props.setSize(id)
+  }
 
   if (stock) {
     return (
@@ -25,7 +29,7 @@ useEffect(() => {
         <p className="heading">SELECT SIZE: </p>
         <div className="sizeselection">
           {props.sizes.map((size, i) => {
-            return <Size sizeInfo={ size } quantity={stock[i].quantity} />
+            return <Size sizeInfo={ size } selected={props.selectedID === size.id} quantity={stock[i].quantity} handleClick={ handleClick }/>
           })}
         </div>
       </div>
@@ -36,7 +40,7 @@ useEffect(() => {
         <p className="heading">SELECT SIZE: </p>
         <div className="sizeselection">
           {props.sizes.map((size) => {
-            return <Size sizeInfo={ size } quantity={''} />
+            return <Size sizeInfo={ size } selected={props.selectedID === size.id} quantity={''} handleClick={ handleClick }/>
           })}
         </div>
       </div>
