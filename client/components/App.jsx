@@ -9,6 +9,10 @@ function App(props) {
   const [classicColors, setClassicColors] = useState(['']);
   const [limitedColors, setLimitedColors] = useState(['']);
   const [sizes, setSizes] = useState(['']);
+  const [classicSelection, setClassicSelection] = useState('');
+  const [limitedSelection, setLimitedSelection] = useState('');
+  const [inStock, setInStock] = useState('');
+  const [colorID, setColorID] = useState('');
 
   useEffect(() => {
     Axios.get('/shoes/:shoeId/colors',{
@@ -41,10 +45,9 @@ function App(props) {
 
   return (
       <div className="app-container">
-        <h2>App</h2>
-        <ColorPalette colors={ classicColors }/>
-        <ColorPalette colors={ limitedColors }/>
-        <SizeSelection />
+        <ColorPalette colors={ classicColors } selection={ classicSelection } setClassic={ setClassicSelection } setLimited={ setLimitedSelection }/>
+        <ColorPalette colors={ limitedColors } selection={ limitedSelection } setClassic={ setClassicSelection } setLimited={ setLimitedSelection }/>
+        <SizeSelection shoeID={ shoeID } colorID={ colorID } sizes={ sizes } />
       </div>
     );
 }
