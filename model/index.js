@@ -58,17 +58,16 @@ let sizes = (id) => {
   });
 };
 
-let quantity = (shoeID, colorID, sizeID) => {
+let quantity = (shoeID, colorID) => {
   return new Promise((resolve, reject) => {
     Quantity.findAll({
       where: {
         shoe_id: shoeID,
-        color_id: colorID,
-        size_id: sizeID
+        color_id: colorID
       }
     })
     .then(results => {
-      resolve(results.map(x => ({ quantity: x.dataValues.quantity }))[0]);
+      resolve(results.map(x => ({ size_id: x.dataValues.size_id, quantity: x.dataValues.quantity })));
     })
     .catch(err => {
       reject(err);

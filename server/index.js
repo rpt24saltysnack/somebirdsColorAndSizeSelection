@@ -30,9 +30,9 @@ app.get('/shoes/:shoeId/sizes', (req, res) => {
   });
 });
 
-app.get('/shoes/:shoeId/colors/:colorId/sizes/:sizeId/quantity', (req, res) => {
-  let { shoeId, colorId, sizeId } = req.params;
-  shoes.get.quantity(shoeId, colorId, sizeId)
+app.get('/shoes/:shoeId/colors/:colorId/quantities', (req, res) => {
+  let { shoeId, colorId } = req.params;
+  shoes.get.quantity(shoeId, colorId)
   .then(result => {
     res.send(result);
   })
