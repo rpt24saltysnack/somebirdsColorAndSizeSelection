@@ -4,47 +4,29 @@ import ColorWell from './ColorWell.jsx';
 function ColorPalette(props) {
 
   const [isLimited, setLimited] = useState(false);
-  const [safeToRender, setSafeToRender] = useState(false);
 
   useEffect(() => {
     if (Array.isArray(props.colors)) {
-      setSafeToRender(true);
       setLimited(props.colors[0].limited);
+    }
+    if (props.colors[0].limited === false) {
+      let color = props.colors[0];
+      props.setClassic(`${color.name} (${color.shoe_color}/${color.sole_color})`);
+      props.setColor(props.colors[0].id);
     }
   }, [props.colors]);
 
-  const handleClick = (colorWell) => {
-    let [id, name, shoeColor, soleColor] = [colorWell.id, colorWell.name, colorWell.shoe_color, colorWell.sole_color];
-    if(isLimited) {
-      props.setLimited(`${name} (${shoeColor}/${soleColor})`);
-      props.setClassic('');
-      props.setColor(id);
-      props.setSize('');
-    } else {
-      props.setClassic(`${name} (${shoeColor}/${soleColor})`);
-      props.setLimited('');
-      props.setColor(id);
-      props.setSize('');
-    }
-  }
-
-  if (safeToRender) {
-    return(
-      <div className="colorpalette-container">
-        {!isLimited && <p className="heading">CLASSICS: {props.selection}</p>}
-        {isLimited && <p className="heading">LIMITED EDITION: {props.selection}</p>}
-        <div className="colorpalette">
-          {props.colors.map(color => {
-            return <ColorWell color={ color } selected={props.selectedID === color.id} handleClick={ handleClick }/>
-          })}
-        </div>
+  return(
+    <div>
+      {!isLimited && <p className="heading">CLASSICS: <span className="post-heading-text">{props.selection}</span></p>}
+      {isLimited && <p className="heading">LIMITED EDITION: <span className="post-heading-text">{props.selection}</span></p>}
+      <div className="colorpalette">
+        {props.colors.map(color => {
+          return <ColorWell color={ color } selected={props.selectedID === color.id} setClassic={ props.setClassic } setLimited={ props.setLimited } setColor={ props.setColor } setSize={ props.setSize } setInStock={props.setInStock} isLimited={ isLimited }/>
+        })}
+      </div>
     </div>
-    )
-  } else {
-    return (
-      <div className="empty-colorpalette"></div>
-    )
-  }
+  );
 }
 
 export default ColorPalette;

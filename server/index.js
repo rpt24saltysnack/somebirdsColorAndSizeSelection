@@ -5,7 +5,6 @@ const PORT = '3001';
 const shoes = require('../model');
 
 app.use(express.static('public'));
-// app.use(express.urlencoded());
 
 app.get('/shoes/:shoeId/colors', (req, res) => {
   let shoeId = req.params.shoeId;
