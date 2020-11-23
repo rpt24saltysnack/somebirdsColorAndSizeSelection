@@ -280,7 +280,58 @@ module.exports = {
         "size": 14
     }
   ],
-  quantity: {
-    "quantity": 9
-  }
+  quantities: [
+    {
+        "size_id": 7,
+        "quantity": 7
+    },
+    {
+        "size_id": 8,
+        "quantity": 9
+    },
+    {
+        "size_id": 9,
+        "quantity": 3
+    },
+    {
+        "size_id": 10,
+        "quantity": 9
+    },
+    {
+        "size_id": 11,
+        "quantity": 2
+    },
+    {
+        "size_id": 12,
+        "quantity": 5
+    },
+    {
+        "size_id": 13,
+        "quantity": 0
+    },
+    {
+        "size_id": 14,
+        "quantity": 7
+    },
+    {
+        "size_id": 15,
+        "quantity": 5
+    },
+    {
+        "size_id": 16,
+        "quantity": 9
+    },
+    {
+        "size_id": 17,
+        "quantity": 2
+    },
+    {
+        "size_id": 18,
+        "quantity": 7
+    },
+    {
+        "size_id": 19,
+        "quantity": 4
+    }
+  ]
 }

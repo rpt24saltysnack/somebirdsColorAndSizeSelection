@@ -1,7 +1,7 @@
 import { expect } from 'chai';
 const shoes = require('../model');
 const exampleData = require('./exampleData/endpoint_responses.js');
-const [shoeID, colorID, sizeID] = [1, 1, 10];
+const [shoeID, colorID] = [1, 1];
 
 describe('API Endpoints', () => {
 
@@ -19,10 +19,10 @@ describe('API Endpoints', () => {
     })
   });
 
-  it('GET request to /shoes/:shoeId/colors/:colorId/sizes/:sizeId/quantity should return an object with a \'quantity\' property of type \'number\'', () => {
-    return shoes.get.quantity(shoeID, colorID, sizeID)
+  it('GET request to /shoes/:shoeId/colors/:colorId/quantities should return data that matches example data', () => {
+    return shoes.get.quantity(shoeID, colorID)
     .then(quantityData => {
-      expect(typeof quantityData.quantity).to.equal('number');
+      expect(JSON.stringify(quantityData)).to.equal(JSON.stringify(exampleData.quantities));
     })
   });
 
