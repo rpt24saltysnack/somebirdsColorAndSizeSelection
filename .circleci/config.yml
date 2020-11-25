@@ -12,6 +12,7 @@ jobs:
           username: mydockerhub-user
           password: $DOCKERHUB_PASSWORD  # context / project UI env-var reference
         environment:
+          MYSQL_HOST: localhost
           MYSQL_ROOT_PASSWORD: rootpw
           MYSQL_DATABASE: fec_somebirds_shoeinventory
           MYSQL_USER: student
