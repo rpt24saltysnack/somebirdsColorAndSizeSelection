@@ -52,10 +52,10 @@ jobs:
       #     name: Create Database
       #     command: |
       #       mysql -h 127.0.0.1 -u student -ppassw0rd < ./db/createDB.sql
-      - run:
-          name: Check package.json
-          command: |
-            cat package.json
+      # - run:
+      #     name: Check package.json
+      #     command: |
+      #       cat package.json
       - run:
           name: Create and Populate Tables
           command: |
