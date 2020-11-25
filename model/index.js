@@ -1,4 +1,4 @@
-const { Color, Size, Quantity, Shoecolor, Shoesize } = require('../db/schema.js');
+const { Color, Size, Quantity, Shoecolor, Shoesize } = require('../db/index.js');
 const { Op } = require('sequelize');
 
 
