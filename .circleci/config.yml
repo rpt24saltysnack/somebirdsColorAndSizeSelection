@@ -15,7 +15,6 @@ jobs:
           MYSQL_ROOT_PASSWORD: rootpw
           MYSQL_DATABASE: fec_somebirds_shoeinventory
           MYSQL_USER: student
-          MYSQL_PASSWORD: passw0rd
     steps:
       - checkout
       - restore_cache:
