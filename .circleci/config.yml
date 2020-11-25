@@ -13,7 +13,7 @@ jobs:
           password: $DOCKERHUB_PASSWORD  # context / project UI env-var reference
         environment:
           MYSQL_ROOT_PASSWORD: rootpw
-          MYSQL_DATABASE: test_db
+          MYSQL_DATABASE: fec_somebirds_shoeinventory
           MYSQL_USER: student
           MYSQL_PASSWORD: passw0rd
     steps:
