@@ -47,7 +47,7 @@ jobs:
       - run:
           name: Create 'student' account
           command: |
-            mysql -h 127.0.0.1 -u user -ppassw0rd < ./db/createStudentAccount.sql
+            mysql -h 127.0.0.1 -u root -prootpw < ./db/createStudentAccount.sql
       - run:
           name: Create Database
           command: |
