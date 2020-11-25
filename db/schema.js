@@ -1,17 +1,17 @@
 const { Sequelize, DataTypes } = require('sequelize');
-const sequelize = new Sequelize('fec_somebirds_shoeinventory', 'student', 'passw0rd', {
-  host: '127.0.0.1',
+const sequelize = new Sequelize('fec_somebirds_shoeinventory', 'student', '', {
+  host: 'localhost',
   dialect: 'mysql',
   logging: false
 });
 
-// sequelize.authenticate()
-// .then(() => {
-//   console.log('Connection has been established successfully.');
-// })
-// .catch((error) => {
-//   console.error('Unable to connect to the database:', error);
-// });
+sequelize.authenticate()
+.then(() => {
+  console.log('Connection has been established successfully.');
+})
+.catch((error) => {
+  console.error('Unable to connect to the database:', error);
+});
 
 const Shoe = sequelize.define('shoe', {
   name: {
