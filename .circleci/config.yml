@@ -51,7 +51,7 @@ jobs:
       - run:
           name: Create Database
           command: |
-            mysql -h 127.0.0.1 -u user -ppassw0rd < ./db/createDB.sql
+            mysql -h 127.0.0.1 -u student < ./db/createDB.sql
       - run:
           name: Create and Populate Tables
           command: |
