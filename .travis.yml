@@ -1,18 +1,18 @@
-language: node_js
+# language: node_js
 
-os: mac
+# os: mac
 
-node_js:
-  - node
+# node_js:
+#   - node
 
-install:
-  - npm ci
+# install:
+#   - npm ci
 
-script:
-  - npm run test:db-install
-  - npm run test:db-permission-setup
-  - npm run test:db-seed
-  - npm test
+# script:
+#   - npm run test:db-install
+#   - npm run test:db-permission-setup
+#   - npm run test:db-seed
+#   - npm test
 
-notifications:
-  email: false
+# notifications:
+#   email: false

@@ -1,0 +1,62 @@
+version: 2.1
+
+jobs:
+  build:
+    docker:
+      - image: cimg/node:15.3.0
+        auth:
+          username: mydockerhub-user
+          password: $DOCKERHUB_PASSWORD  # context / project UI env-var reference
+      - image: circleci/mysql:8.0.4
+        auth:
+          username: mydockerhub-user
+          password: $DOCKERHUB_PASSWORD  # context / project UI env-var reference
+        environment:
+          MYSQL_ROOT_PASSWORD: rootpw
+          MYSQL_DATABASE: fec_somebirds_shoeinventory
+          MYSQL_USER: student
+          MYSQL_PASSWORD: passw0rd
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+            - node-deps-v1-{{ .Branch }}-{{checksum "package-lock.json"}}
+      - run:
+          name: install packages
+          command: npm ci
+      - save_cache:
+          key: node-deps-v1-{{ .Branch }}-{{checksum "package-lock.json"}}
+          paths:
+            - ~/.npm
+      - run:
+      # Our primary container isn't MYSQL so run a sleep command until it's ready.
+          name: Waiting for MySQL to be ready
+          command: |
+            for i in `seq 1 10`;
+            do
+              nc -z 127.0.0.1 3306 && echo Success && exit 0
+              echo -n .
+              sleep 1
+            done
+            echo Failed waiting for MySQL && exit 1
+      - run:
+          name: Install MySQL CLI; Create student permissions; Create database; Create tables; Populate tables with data
+          command: |
+            sudo apt-get update
+            sudo apt-get install default-mysql-client
+      - run:
+          name: Create 'student' account
+          command: |
+            mysql -h 127.0.0.1 -u root -prootpw < ./db/createStudentAccount.sql
+      - run:
+          name: Create and Populate Tables
+          command: |
+            node ./db/create_tables.js
+            node ./db/generate_data.js
+      - run:
+          name: Run Tests
+          command: npm run test
+workflows:
+  build-environment:
+    jobs:
+      - build

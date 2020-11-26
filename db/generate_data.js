@@ -1,4 +1,4 @@
-const { Shoe, Color, Size, Quantity, Shoecolor, Shoesize } = require('./schema.js');
+const { Shoe, Color, Size, Quantity, Shoecolor, Shoesize } = require('./index.js');
 
 //Bulk Value Collections
 let gender = ['Men\'s', 'Women\'s'];

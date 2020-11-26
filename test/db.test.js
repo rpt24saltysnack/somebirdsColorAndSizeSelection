@@ -1,5 +1,5 @@
 import { expect } from 'chai';
-const { Shoe, Color, Size, Quantity, Shoecolor, Shoesize } = require('../db/schema.js');
+const { Shoe, Color, Size, Quantity, Shoecolor, Shoesize } = require('../db/index.js');
 
 describe('Database', () => {
   it('has a shoes table with 100 records', () => {
