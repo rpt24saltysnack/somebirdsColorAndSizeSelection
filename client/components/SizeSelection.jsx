@@ -9,7 +9,7 @@ function SizeSelection(props) {
 
   useEffect(() => {
     if(props.colorID) {
-      Axios.get(`/shoes/${props.shoeID}/colors/${props.colorID}/quantities`)
+      Axios.get(`http://localhost:3001/shoes/${props.shoeID}/colors/${props.colorID}/quantities`)
       .then(quantities => {
         setStock(quantities.data);
       })
