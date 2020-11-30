@@ -18,7 +18,7 @@ function App(props) {
   const [sizeID, setSizeID] = useState('');
 
   useEffect(() => {
-    Axios.get(`/shoes/${shoeID}/colors`,)
+    Axios.get(`http://localhost:3001/shoes/${shoeID}/colors`,)
     .then(colors => {
       setClassicColors(colors.data.filter(color => color.limited === false));
       setLimitedColors(colors.data.filter(color => color.limited === true));
@@ -29,7 +29,7 @@ function App(props) {
   }, [shoeID]);
 
   useEffect(() => {
-    Axios.get(`/shoes/${shoeID}/sizes`,)
+    Axios.get(`http://localhost:3001/shoes/${shoeID}/sizes`,)
     .then(sizes => {
       setSizes(sizes.data);
     })
