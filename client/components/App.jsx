@@ -7,7 +7,7 @@ import Axios from 'axios';
 
 function App(props) {
 
-  const [shoeID, setShoeID] = useState(props.shoeID);
+  const [shoeID, setShoeID] = useState(props.shoeID || 1);
   const [classicColors, setClassicColors] = useState(['']);
   const [limitedColors, setLimitedColors] = useState(['']);
   const [sizes, setSizes] = useState(['']);
