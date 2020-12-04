@@ -23,12 +23,12 @@ GRANT ALL ON *.* TO 'student'@'localhost';
 ### Build Bundle Using Webpack
 Run the following to generate the bundle.js file that is needed to generate our color & size selection component
 ```
-npm run react-dev
+npm run build
 ```
 
 ### After Set Up
 Run the following to initiate the server
 ```
-npm run server-dev
+npm run start
 ```
 and point your browser to **localhost:3001**
