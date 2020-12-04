@@ -1,0 +1,90 @@
+.text {
+  font-family: helvetica;
+  font-size: 12px;
+}
+
+.selectedNoStock {
+  height: 35px;
+  width: 35px;
+  margin: 5px 5px 5px 0px;
+  border: solid 1px #222;
+  border-radius: 2px;
+  text-align: center;
+  background-color: #333;
+  color: white;
+  background:
+  linear-gradient(to top left,
+    rgb(51, 51, 51) 0%,
+    rgb(51, 51, 51) calc(50% - 0.8px),
+    rgb(146, 146, 146) 50%,
+    rgb(51, 51, 51) calc(50% + 0.8px),
+    rgb(51, 51, 51) 100%);
+}
+
+.selectedNoStock:hover {
+  background-color: #DDDDDD;
+  transition: background-color 1s linear;
+  transition: text-decoration-color 1s linear;
+  cursor: pointer;
+  background-color: #333;
+  color: white;
+}
+
+.selectedHasStock {
+  height: 35px;
+  width: 35px;
+  margin: 5px 5px 5px 0px;
+  border: solid 1px #222;
+  border-radius: 2px;
+  text-align: center;
+  background-color: #333;
+  color: white;
+}
+
+.selectedHasStock:hover {
+  background-color: #DDDDDD;
+  transition: background-color 1s linear;
+  transition: text-decoration-color 1s linear;
+  cursor: pointer;
+  background-color: #333;
+  color: white;
+}
+
+.noStock {
+  height: 35px;
+  width: 35px;
+  margin: 5px 5px 5px 0px;
+  border: solid 1px #222;
+  border-radius: 2px;
+  text-align: center;
+  background:
+  linear-gradient(to top left,
+    rgba(0,0,0,0) 0%,
+    rgba(0,0,0,0) calc(50% - 0.8px),
+    rgb(146, 146, 146) 50%,
+    rgba(0,0,0,0) calc(50% + 0.8px),
+    rgba(0,0,0,0) 100%);
+}
+
+.noStock:hover {
+  background-color: #DDDDDD;
+  transition: background-color 1s linear;
+  transition: text-decoration-color 1s linear;
+  cursor: pointer;
+}
+
+.hasStock {
+  height: 35px;
+  width: 35px;
+  margin: 5px 5px 5px 0px;
+  border: solid 1px #222;
+  border-radius: 2px;
+  text-align: center;
+}
+
+.hasStock:hover {
+  background-color: #DDDDDD;
+  transition: background-color 1s linear;
+  transition: text-decoration-color 1s linear;
+  cursor: pointer;
+}

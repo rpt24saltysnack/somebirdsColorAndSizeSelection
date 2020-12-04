@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import styles from '../styles/size.css';
 
 function Size(props) {
 
@@ -12,10 +13,10 @@ function Size(props) {
 
   return (
     <div>
-      {isSelected && noStock && <div className="size selectedsize crossedselected" onClick={ handleClick }><p className="p size-text">{ size }</p></div>}
-      {isSelected && !noStock && <div className="size selectedsize" onClick={ handleClick }><p className="p size-text">{ size }</p></div>}
-      {!isSelected && noStock && <div className="size crossed" onClick={ handleClick }><p className="p size-text">{ size }</p></div>}
-      {!isSelected && !noStock && <div className="size" onClick={ handleClick }><p className="p size-text">{ size }</p></div>}
+      {isSelected && noStock && <div className={styles.selectedNoStock} onClick={ handleClick }><p className={styles.text}>{ size }</p></div>}
+      {isSelected && !noStock && <div className={styles.selectedHasStock} onClick={ handleClick }><p className={styles.text}>{ size }</p></div>}
+      {!isSelected && noStock && <div className={styles.noStock} onClick={ handleClick }><p className={styles.text}>{ size }</p></div>}
+      {!isSelected && !noStock && <div className={styles.hasStock} onClick={ handleClick }><p className={styles.text}>{ size }</p></div>}
     </div>
   );
 }
