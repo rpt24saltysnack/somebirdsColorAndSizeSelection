@@ -23,10 +23,10 @@ function PurchaseButton(props) {
 
   return (
     <div className="button-container">
-      {addToCart && <div className="button enabled"><p className="button-text enabled">{buttonText}</p></div>}
-      {selectASize && <div className="button"><p className="button-text">{buttonText}</p></div>}
-      {sizeSoldOut && <div className="button"><p className="button-text">{buttonText}</p></div>}
-      <p className="return-info">Free returns through January 15</p>
+      {addToCart && <div className="button enabled"><p className="p button-text enabled">{buttonText}</p></div>}
+      {selectASize && <div className="button"><p className="p button-text">{buttonText}</p></div>}
+      {sizeSoldOut && <div className="button"><p className="p button-text">{buttonText}</p></div>}
+      <p className="p return-info">Free returns through January 15</p>
     </div>
   );
 }

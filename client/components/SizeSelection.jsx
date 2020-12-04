@@ -29,7 +29,7 @@ function SizeSelection(props) {
 
   return (
     <div className="sizeselection-container">
-      <p className="heading">SELECT SIZE: {soldOut && <span className="soldoutnotice">This item is sold out</span>} </p>
+      <p className="p heading">SELECT SIZE: {soldOut && <span className="soldoutnotice">This item is sold out</span>} </p>
       {stock && <div className="sizeselection">
         {props.sizes.map((size, i) => {
           return <Size sizeInfo={ size } selected={props.selectedID === size.id} quantity={stock[i].quantity} handleClick={ handleClick }/>
