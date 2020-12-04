@@ -4,9 +4,9 @@
   "description": "Shoe color and selection service",
   "main": "index.js",
   "scripts": {
+    "start": "nodemon ./server/index.js",
+    "build": "webpack -w",
     "test": "./node_modules/.bin/mocha --require @babel/register ./test",
-    "react-dev": "webpack -w",
-    "server-dev": "nodemon ./server/index.js",
     "db:seed": "mysql -u student < ./db/createDB.sql && node ./db/create_tables.js && node ./db/generate_data.js",
     "db:drop-tables": "node ./db/drop_tables.js",
     "test:db-install": "brew install mysql@5.7 && brew services start mysql@5.7",
