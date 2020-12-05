@@ -1,4 +1,5 @@
 import React from 'react';
+import styles from '../styles/colorwell.css';
 
 function ColorWell(props) {
 
@@ -24,8 +25,8 @@ function ColorWell(props) {
 
   return(
     <div>
-      {!isSelected && <div className="colorwell" style={{background: `linear-gradient(to bottom right,  ${shoeColor} 50%,${soleColor} 50%)`}} onClick={ handleClick }></div>}
-      {isSelected && <div className="colorwell selectedwell" style={{background: `linear-gradient(to bottom right,  ${shoeColor} 50%,${soleColor} 50%)`}} onClick={ handleClick }></div>}
+      {!isSelected && <div className={styles.colorWell} style={{background: `linear-gradient(to bottom right,  ${shoeColor} 50%,${soleColor} 50%)`}} onClick={ handleClick }></div>}
+      {isSelected && <div className={styles.selectedColorWell} style={{background: `linear-gradient(to bottom right,  ${shoeColor} 50%,${soleColor} 50%)`}} onClick={ handleClick }></div>}
     </div>
   );
 }
