@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Size from './Size.jsx';
 import Axios from 'axios';
+import styles from '../styles/size-selection.css';
 
 function SizeSelection(props) {
 
@@ -28,14 +29,14 @@ function SizeSelection(props) {
 
 
   return (
-    <div className="sizeselection-container">
-      <p className="heading">SELECT SIZE: {soldOut && <span className="soldoutnotice">This item is sold out</span>} </p>
-      {stock && <div className="sizeselection">
+    <div>
+      <p className={styles.heading}>SELECT SIZE: {soldOut && <span className={styles.soldOutNotice}>This item is sold out</span>} </p>
+      {stock && <div className={styles.sizeSelectionContainer}>
         {props.sizes.map((size, i) => {
           return <Size sizeInfo={ size } selected={props.selectedID === size.id} quantity={stock[i].quantity} handleClick={ handleClick }/>
         })}
       </div>}
-      {!stock && <div className="sizeselection">
+      {!stock && <div className={styles.sizeSelectionContainer}>
         {props.sizes.map((size) => {
           return <Size sizeInfo={ size } selected={props.selectedID === size.id} quantity={''} handleClick={ handleClick }/>
         })}

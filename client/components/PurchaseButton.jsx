@@ -1,4 +1,5 @@
 import React from 'react';
+import styles from '../styles/purchase-button.css';
 
 function PurchaseButton(props) {
 
@@ -22,11 +23,11 @@ function PurchaseButton(props) {
   const sizeSoldOut = buttonText === 'SIZE SOLD OUT';
 
   return (
-    <div className="button-container">
-      {addToCart && <div className="button enabled"><p className="button-text enabled">{buttonText}</p></div>}
-      {selectASize && <div className="button"><p className="button-text">{buttonText}</p></div>}
-      {sizeSoldOut && <div className="button"><p className="button-text">{buttonText}</p></div>}
-      <p className="return-info">Free returns through January 15</p>
+    <div className={styles.buttonContainer}>
+      {addToCart && <div className={styles.buttonEnabled}><p className={styles.textEnabled}>{buttonText}</p></div>}
+      {selectASize && <div className={styles.button}><p className={styles.text}>{buttonText}</p></div>}
+      {sizeSoldOut && <div className={styles.button}><p className={styles.text}>{buttonText}</p></div>}
+      <p className={styles.returnInfo}>Free returns through January 15</p>
     </div>
   );
 }

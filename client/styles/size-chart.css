@@ -1,0 +1,84 @@
+.sizeChartContainer {
+  margin: 10px 0px 25px 0px;
+}
+
+.heading {
+  font-family: Helvetica, sans-serif;
+  font-weight: 700;
+  font-size: 30px;
+  letter-spacing: .5px;
+  margin-top: 15px;
+  margin-bottom: 0px;
+}
+
+.subHeading {
+  font-family: Helvetica, sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 1.7px;
+}
+
+.text {
+  font-family: Helvetica, sans-serif;
+  font-weight: 300;
+  margin-bottom: 20px;
+}
+
+.linkText {
+  font-family: Helvetica, sans-serif;
+  font-size: 12px;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.table {
+  border-collapse:collapse;
+  border-spacing:0;
+  margin-bottom: 40px;
+}
+
+.tableCellCountry {
+  font-family: Helvetica, sans-serif;
+  border-color:white;
+  border-style:solid;
+  border-width:2px;
+  font-size:14px;
+  font-weight: 600;
+  overflow:hidden;
+  word-break:normal;
+  text-align: center;
+  height: 45px;
+  width: 65px;
+  color: white;
+  background-color:#333;
+}
+
+.tableCellBlue {
+  font-family: Helvetica, sans-serif;
+  border-color:white;
+  border-style:solid;
+  border-width:2px;
+  font-size:14px;
+  font-weight: 600;
+  overflow:hidden;
+  word-break:normal;
+  text-align: center;
+  height: 45px;
+  width: 65px;
+  background-color: rgb(241, 246, 248);
+}
+
+.tableCellRed {
+  font-family: Helvetica, sans-serif;
+  border-color:white;
+  border-style:solid;
+  border-width:2px;
+  font-size:14px;
+  font-weight: 600;
+  overflow:hidden;
+  word-break:normal;
+  text-align: center;
+  height: 45px;
+  width: 65px;
+  background-color: rgb(238, 235, 229);
+}

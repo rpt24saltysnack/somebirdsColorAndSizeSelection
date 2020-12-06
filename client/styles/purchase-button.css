@@ -1,0 +1,50 @@
+.buttonContainer {
+  text-align: center;
+}
+
+.button {
+  height: auto;
+  width: 100%;
+  background-color: rgb(208, 208, 208);
+  color: white;
+  border-radius: 2px;
+}
+
+.buttonEnabled {
+  height: auto;
+  width: 100%;
+  color: white;
+  border-radius: 2px;
+  background-color: #333;
+  cursor: pointer;
+}
+
+.buttonEnabled:hover {
+  background-color: white;
+  color: #333;
+}
+
+.text {
+  font-family: helvetica;
+  border: solid 1px #ccc;
+  border-radius: 2px;
+  letter-spacing: 1px;
+  font-weight: bold;
+  padding: 12px 0px 12px 0px;
+  user-select: none;
+}
+
+.textEnabled {
+  font-family: helvetica;
+  border: solid 1px #333;
+  border-radius: 2px;
+  letter-spacing: 1px;
+  font-weight: bold;
+  padding: 12px 0px 12px 0px;
+  user-select: none;
+}
+
+.returnInfo {
+  font-family: helvetica;
+  font-size: 12px;
+}
