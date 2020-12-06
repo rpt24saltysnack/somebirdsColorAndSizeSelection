@@ -4,12 +4,12 @@
   border-radius: 50%;
   margin: 5px 5px 5px 0px;
   border: solid 1px #888;
+  cursor: pointer;
 }
 
 .colorWell:hover {
   border: double 1px #fff;
   box-shadow: 0 0 0 1px #888;
-  cursor: pointer;
 }
 
 .selectedColorWell {
@@ -19,10 +19,10 @@
   margin: 5px 5px 5px 0px;
   border: double 1px #fff;
   box-shadow: 0 0 0 1px #888;
+  cursor: pointer;
 }
 
 .selectedColorWell:hover {
   border: double 1px #fff;
   box-shadow: 0 0 0 1px #888;
-  cursor: pointer;
 }
