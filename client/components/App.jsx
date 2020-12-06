@@ -4,6 +4,7 @@ import SizeSelection from './SizeSelection.jsx';
 import PurchaseButton from './PurchaseButton.jsx';
 import SizeChart from './SizeChart.jsx';
 import Axios from 'axios';
+import styles from '../styles/app.css';
 
 function App(props) {
 
@@ -39,7 +40,7 @@ function App(props) {
   }, [shoeID]);
 
   return (
-      <div className="app-container">
+      <div className={styles.appContainer}>
         <ColorPalette colors={ classicColors } selection={ classicSelection } setClassic={ setClassicSelection } setLimited={ setLimitedSelection } setColor={ setColorID } selectedID={ colorID } setSize={ setSizeID } setInStock={setInStock}/>
         <ColorPalette colors={ limitedColors } selection={ limitedSelection } setClassic={ setClassicSelection } setLimited={ setLimitedSelection } setColor={ setColorID } selectedID={ colorID } setSize={ setSizeID } setInStock={setInStock}/>
         <SizeSelection shoeID={ shoeID } colorID={ colorID } sizes={ sizes } setSize={ setSizeID } selectedID={ sizeID } setInStock={setInStock} inStock={inStock}/>
