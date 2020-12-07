@@ -17,12 +17,16 @@ function App(props) {
   const [inStock, setInStock] = useState('');
   const [colorID, setColorID] = useState('');
   const [sizeID, setSizeID] = useState('');
+  const [render, setRender] = useState(false);
+
 
   useEffect(() => {
+    console.log(window.location.search.slice(1));
     Axios.get(`/shoes/${shoeID}/colors`)
     .then(colors => {
       setClassicColors(colors.data.filter(color => color.limited === false));
       setLimitedColors(colors.data.filter(color => color.limited === true));
+      setRender(true);
     })
     .catch(err => {
       console.error(err);
@@ -41,11 +45,14 @@ function App(props) {
 
   return (
       <div className={styles.appContainer}>
-        <ColorPalette colors={ classicColors } selection={ classicSelection } setClassic={ setClassicSelection } setLimited={ setLimitedSelection } setColor={ setColorID } selectedID={ colorID } setSize={ setSizeID } setInStock={setInStock}/>
-        <ColorPalette colors={ limitedColors } selection={ limitedSelection } setClassic={ setClassicSelection } setLimited={ setLimitedSelection } setColor={ setColorID } selectedID={ colorID } setSize={ setSizeID } setInStock={setInStock}/>
-        <SizeSelection shoeID={ shoeID } colorID={ colorID } sizes={ sizes } setSize={ setSizeID } selectedID={ sizeID } setInStock={setInStock} inStock={inStock}/>
-        <SizeChart />
-        <PurchaseButton inStock={inStock} colorID={colorID} sizeID={sizeID}/>
+        {render && <div>
+          <ColorPalette colors={ classicColors } selection={ classicSelection } setClassic={ setClassicSelection } setLimited={ setLimitedSelection } setColor={ setColorID } selectedID={ colorID } setSize={ setSizeID } setInStock={setInStock}/>
+          <ColorPalette colors={ limitedColors } selection={ limitedSelection } setClassic={ setClassicSelection } setLimited={ setLimitedSelection } setColor={ setColorID } selectedID={ colorID } setSize={ setSizeID } setInStock={setInStock}/>
+          <SizeSelection shoeID={ shoeID } colorID={ colorID } sizes={ sizes } setSize={ setSizeID } selectedID={ sizeID } setInStock={setInStock} inStock={inStock}/>
+          <SizeChart />
+          <PurchaseButton inStock={inStock} colorID={colorID} sizeID={sizeID}/>
+        </div>}
+        {!render && <div></div>}
       </div>
     );
 }
