@@ -52,7 +52,6 @@ function App(props) {
           <SizeChart />
           <PurchaseButton inStock={inStock} colorID={colorID} sizeID={sizeID}/>
         </div>}
-        {!render && <div></div>}
       </div>
     );
 }
