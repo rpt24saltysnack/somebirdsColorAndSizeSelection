@@ -16,7 +16,7 @@ gender.forEach(gender => {
   });
 });
 
-let colorBulkData = [
+let classicColorData = [
   {
     name: 'Blue Whale',
     shoe_color: 'Dodger Blue',
@@ -96,7 +96,10 @@ let colorBulkData = [
     shoe_hex: '#DEB887',
     sole_hex: '#8B4513',
     limited: false
-  },
+  }
+];
+
+let limitedColorData = [
   {
     name: 'Blue Lagoon',
     shoe_color: 'Medium Blue',
@@ -219,17 +222,52 @@ let colorBulkData = [
   }
 ];
 
+let colorBulkData = [...classicColorData, ...limitedColorData];
+
 let shoeSize = ['5', '5.5', '6', '6.5', '7', '7.5', '8', '8.5', '9', '9.5', '10', '10.5', '11', '11.5', '12', '12.5', '13', '13.5', '14'];
 let sizeBulkData = shoeSize.map(size => ({ size: size }));
 
 const NUMBER_OF_SHOES = 100;
 const NUMBER_OF_COLORS = 25;
+const NUMBER_OF_CLASSIC_COLORS = 10;
+const NUMBER_OF_LIMITED_COLORS = 15;
+
 let shoeColorBulkData = [];
 
-for (let shoeID = 1; shoeID <= NUMBER_OF_SHOES; shoeID++) {
-  for (let colorID = 1; colorID <= NUMBER_OF_COLORS; colorID++) {
-    shoeColorBulkData.push({ shoe_id: shoeID, color_id: colorID });
-  }
+// for (let shoeID = 1; shoeID <= NUMBER_OF_SHOES; shoeID++) {
+//   for (let colorID = 1; colorID <= NUMBER_OF_COLORS; colorID++) {
+//     shoeColorBulkData.push({ shoe_id: shoeID, color_id: colorID });
+//   }
+// }
+
+for (let shoeID = 1; shoeID <= NUMBER_OF_SHOES; shoeID ++) {
+    let classicCount = randomNumberGenerator(3, NUMBER_OF_CLASSIC_COLORS);
+    let classicColorIndexes = [];
+    for (let i = 0; i < classicCount; i++) {
+      let choice = randomNumberGenerator(1, 10);
+      if (!classicColorIndexes.includes(choice)) {
+        classicColorIndexes.push(choice);
+      } else {
+        i -= 1;
+      }
+    }
+    classicColorIndexes.forEach(x => {
+      shoeColorBulkData.push({ shoe_id: shoeID, color_id: x });
+    });
+
+    let limitedCount = randomNumberGenerator(5, NUMBER_OF_LIMITED_COLORS);
+    let limitedColorIndexes = [];
+    for (let i = 0; i < limitedCount; i++) {
+      let choice = randomNumberGenerator(11, 25);
+      if (!limitedColorIndexes.includes(choice)) {
+        limitedColorIndexes.push(choice);
+      } else {
+        i -= 1;
+      }
+    }
+    limitedColorIndexes.forEach(x => {
+      shoeColorBulkData.push({ shoe_id: shoeID, color_id: x });
+    });
 }
 
 let mensSizeIDs = [7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19];
@@ -244,9 +282,7 @@ for (let shoeID = 1; shoeID <= NUMBER_OF_SHOES; shoeID++) {
   }
 }
 
-let quantityGenerator = () => {
-  let max = 10;
-  let min = 0;
+let randomNumberGenerator = (min, max) => {
   return Math.floor(Math.random() * (max - min + 1) + min);
 };
 
@@ -255,11 +291,11 @@ let quantityBulkData = [];
 for (let shoeID = 1; shoeID <= NUMBER_OF_SHOES; shoeID++) {
   if (shoeID <= 50) {
     for (let colorID = 1; colorID <= NUMBER_OF_COLORS; colorID++) {
-      mensSizeIDs.forEach(sizeID => { quantityBulkData.push({ shoe_id: shoeID, color_id: colorID, size_id: sizeID, quantity: quantityGenerator() }) });
+      mensSizeIDs.forEach(sizeID => { quantityBulkData.push({ shoe_id: shoeID, color_id: colorID, size_id: sizeID, quantity: randomNumberGenerator(1, 10) }) });
     }
   } else {
     for (let colorID = 1; colorID <= NUMBER_OF_COLORS; colorID++) {
-      womensSizeIDs.forEach(sizeID => { quantityBulkData.push({ shoe_id: shoeID, color_id: colorID, size_id: sizeID, quantity: quantityGenerator() }) });
+      womensSizeIDs.forEach(sizeID => { quantityBulkData.push({ shoe_id: shoeID, color_id: colorID, size_id: sizeID, quantity: randomNumberGenerator(1, 10) }) });
     }
   }
 }
