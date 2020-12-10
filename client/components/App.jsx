@@ -21,7 +21,6 @@ function App(props) {
 
 
   useEffect(() => {
-    console.log(window.location.search.slice(1));
     Axios.get(`/shoes/${shoeID}/colors`)
     .then(colors => {
       setClassicColors(colors.data.filter(color => color.limited === false));
