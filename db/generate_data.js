@@ -232,6 +232,10 @@ const NUMBER_OF_COLORS = 25;
 const NUMBER_OF_CLASSIC_COLORS = 10;
 const NUMBER_OF_LIMITED_COLORS = 15;
 
+let randomNumberGenerator = (min, max) => {
+  return Math.floor(Math.random() * (max - min + 1) + min);
+};
+
 let shoeColorBulkData = [];
 
 // for (let shoeID = 1; shoeID <= NUMBER_OF_SHOES; shoeID++) {
@@ -282,20 +286,16 @@ for (let shoeID = 1; shoeID <= NUMBER_OF_SHOES; shoeID++) {
   }
 }
 
-let randomNumberGenerator = (min, max) => {
-  return Math.floor(Math.random() * (max - min + 1) + min);
-};
-
 let quantityBulkData = [];
 
 for (let shoeID = 1; shoeID <= NUMBER_OF_SHOES; shoeID++) {
   if (shoeID <= 50) {
     for (let colorID = 1; colorID <= NUMBER_OF_COLORS; colorID++) {
-      mensSizeIDs.forEach(sizeID => { quantityBulkData.push({ shoe_id: shoeID, color_id: colorID, size_id: sizeID, quantity: randomNumberGenerator(1, 10) }) });
+      mensSizeIDs.forEach(sizeID => { quantityBulkData.push({ shoe_id: shoeID, color_id: colorID, size_id: sizeID, quantity: randomNumberGenerator(0, 9) }) });
     }
   } else {
     for (let colorID = 1; colorID <= NUMBER_OF_COLORS; colorID++) {
-      womensSizeIDs.forEach(sizeID => { quantityBulkData.push({ shoe_id: shoeID, color_id: colorID, size_id: sizeID, quantity: randomNumberGenerator(1, 10) }) });
+      womensSizeIDs.forEach(sizeID => { quantityBulkData.push({ shoe_id: shoeID, color_id: colorID, size_id: sizeID, quantity: randomNumberGenerator(0, 9) }) });
     }
   }
 }
