@@ -5,7 +5,7 @@ const HOST = 'localhost';
 const PORT = '3001';
 const shoes = require('../model');
 
-app.use(cors());
+// app.use(cors());
 app.use(express.static('public'));
 
 app.get('/shoes/:shoeId/colors', (req, res) => {
