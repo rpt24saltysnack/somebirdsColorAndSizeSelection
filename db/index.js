@@ -1,6 +1,7 @@
 const { Sequelize, DataTypes } = require('sequelize');
 const sequelize = new Sequelize('fec_somebirds_shoeinventory', 'student', '', {
-  host: 'localhost',
+  host: 'fec-somebirds.cvmpdjgctjaa.us-east-2.rds.amazonaws.com',
+  port: 3306,
   dialect: 'mysql',
   logging: false
 });

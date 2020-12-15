@@ -44,6 +44,6 @@ app.get('/shoes/:shoeId/colors/:colorId/quantities', (req, res) => {
   });
 });
 
-app.listen(PORT, HOST, () => {
-  console.log(`Listening on ${HOST}:${PORT}`);
+app.listen(PORT, () => {
+  console.log(`Listening on localhost:${PORT}`);
 });
