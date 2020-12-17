@@ -46,6 +46,7 @@
     "@babel/plugin-proposal-function-bind": "^7.12.1",
     "@babel/register": "^7.12.1",
     "chai": "^4.2.0",
+    "dotenv": "^8.2.0",
     "mocha": "^8.2.1",
     "mocha-jsdom": "^2.0.0",
     "nodemon": "^2.0.6"
