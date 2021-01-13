@@ -27,7 +27,7 @@ function PurchaseButton(props) {
       {addToCart && <div className={styles.buttonEnabled}><p className={styles.textEnabled}>{buttonText}</p></div>}
       {selectASize && <div className={styles.button}><p className={styles.text}>{buttonText}</p></div>}
       {sizeSoldOut && <div className={styles.button}><p className={styles.text}>{buttonText}</p></div>}
-      <p className={styles.returnInfo}>Free returns through January 15</p>
+      <p className={styles.returnInfo}>Free shipping & 30-day returns</p>
     </div>
   );
 }

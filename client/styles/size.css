@@ -6,7 +6,7 @@
 .selectedNoStock {
   height: 35px;
   width: 35px;
-  margin: 5px 5px 5px 0px;
+  margin: 5px 6px 5px 0px;
   border: solid 1px #222;
   border-radius: 2px;
   text-align: center;
@@ -31,7 +31,7 @@
 .selectedHasStock {
   height: 35px;
   width: 35px;
-  margin: 5px 5px 5px 0px;
+  margin: 5px 6px 5px 0px;
   border: solid 1px #222;
   border-radius: 2px;
   text-align: center;
@@ -48,7 +48,7 @@
 .noStock {
   height: 35px;
   width: 35px;
-  margin: 5px 5px 5px 0px;
+  margin: 5px 6px 5px 0px;
   border: solid 1px #222;
   border-radius: 2px;
   text-align: center;
@@ -70,7 +70,7 @@
 .hasStock {
   height: 35px;
   width: 35px;
-  margin: 5px 5px 5px 0px;
+  margin: 5px 6px 5px 0px;
   border: solid 1px #222;
   border-radius: 2px;
   text-align: center;
