@@ -6,6 +6,11 @@ Shoe color &amp; size selection service
 ```
 npm install
 ```
+### Environment Variables
+Create a .env file within repo root directory and add
+```
+DEV_DB_HOST=localhost
+```
 
 ### MySQL Database Setup
 ```
