@@ -17,7 +17,7 @@ This will create a database called fec_somebirds_shoeinventory
 To create this login account with all the available permissions (for simplicity), log in to MySQL on an administrative account and run the following commands
 ```
 CREATE USER 'student'@'localhost';
-GRANT ALL ON *.* TO 'student'@'localhost';
+GRANT ALL PRIVILEGES ON *.* TO 'student'@'localhost';
 ```
 
 ### Build Bundle Using Webpack
